@@ -11,7 +11,6 @@ const Footer = () => {
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
     { name: 'Projects', path: '/projects' },
-    { name: 'Skills', path: '/skills' },
     { name: 'Contact', path: '/contact' }
   ];
 
@@ -29,14 +28,6 @@ const Footer = () => {
               <p className="footer-tagline">
                 Full Stack Developer specializing in secure, scalable web applications.
               </p>
-
-              {/* Availability Status */}
-              <div className="availability-status">
-                <span className="status-dot"></span>
-                <span className="status-text">Available for opportunities</span>
-              </div>
-
-
             </div>
 
             {/* Quick Links */}
@@ -86,11 +77,6 @@ const Footer = () => {
                 </li>
                 <li>
                   <span className="footer-text">🕐 Available Mon-Fri</span>
-                </li>
-                <li>
-                  <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="footer-link">
-                    📄 Download Resume
-                  </a>
                 </li>
               </ul>
             </div>

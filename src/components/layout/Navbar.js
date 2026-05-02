@@ -59,16 +59,6 @@ const Navbar = ({ theme, toggleTheme }) => {
             {theme === 'light' ? '🌙' : '☀️'}
           </button>
 
-          {/* Resume Button */}
-          <a
-            href="/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn-primary btn-sm"
-          >
-            Resume
-          </a>
-
           {/* Mobile Menu Toggle */}
           <button
             className="mobile-menu-toggle"
@@ -96,16 +86,6 @@ const Navbar = ({ theme, toggleTheme }) => {
               {link.name}
             </NavLink>
           ))}
-          
-          <a
-            href="/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn-primary"
-            style={{ marginTop: '2rem' }}
-          >
-            View Resume
-          </a>
         </div>
       </div>
     </nav>

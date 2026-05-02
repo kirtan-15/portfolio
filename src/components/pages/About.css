@@ -3,12 +3,18 @@
 .about-page {
   padding: var(--spacing-3xl) 0;
   background: var(--bg-primary);
+  min-height: 100vh;
 }
 
 /* Section Styles */
 .about-section {
   margin-bottom: 8rem;
   animation: fadeInUp 0.6s ease-out;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-2xl);
+  padding: var(--spacing-3xl);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .section-label {
@@ -36,6 +42,30 @@
 }
 
 /* Intro Section */
+.about-intro-section {
+  margin-bottom: 8rem;
+  animation: fadeInUp 0.6s ease-out;
+  text-align: center;
+}
+
+.intro-content-centered {
+  max-width: 900px;
+  margin: var(--spacing-2xl) auto 0;
+}
+
+.intro-paragraph-centered {
+  font-size: var(--font-size-lg);
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-xl);
+  text-align: center;
+}
+
+.intro-paragraph-centered strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
 .intro-section {
   max-width: 900px;
 }
@@ -231,6 +261,7 @@
   margin-bottom: 8rem;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(var(--secondary-rgb), 0.3);
 }
 
 .about-cta::before {

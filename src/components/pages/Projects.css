@@ -5,61 +5,30 @@
   min-height: 100vh;
 }
 
-.project-controls {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 4rem;
-  padding: 1.5rem;
-  background: var(--bg-secondary);
-  border-radius: var(--radius-xl);
-  border: 1px solid var(--border-color);
-  box-shadow: var(--shadow-md);
+.projects-description {
+  max-width: 800px;
+  margin: var(--spacing-2xl) auto 0;
+  text-align: center;
 }
 
-.filter-container {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.filter-btn {
-  padding: 0.6rem 1.5rem;
-  border-radius: 2rem;
-  border: 1px solid var(--border-color);
-  background: var(--bg-tertiary);
+.projects-description p {
+  font-size: var(--font-size-lg);
+  line-height: 1.7;
   color: var(--text-secondary);
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  margin-bottom: var(--spacing-lg);
 }
 
-.filter-btn:hover {
-  border-color: var(--secondary);
+.projects-description p:first-child {
+  font-size: var(--font-size-xl);
   color: var(--text-primary);
-}
-
-.filter-btn.active {
-  background: var(--secondary-gradient);
-  color: white;
-  border-color: transparent;
-  box-shadow: 0 4px 15px rgba(0, 198, 255, 0.3);
-}
-
-.project-count {
-  font-size: 1.1rem;
-  color: var(--text-tertiary);
   font-weight: 500;
-}
-
-.project-count span {
-  color: var(--secondary);
-  font-weight: 700;
 }
 
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
   gap: 2.5rem;
+  margin-top: 4rem;
 }
 
 .project-card-v2 {
@@ -182,19 +151,12 @@
 }
 
 @media (max-width: 768px) {
-  .project-controls {
-    flex-direction: column;
-    gap: 1.5rem;
-    align-items: flex-start;
-  }
-  
-  .filter-container {
-    overflow-x: auto;
-    width: 100%;
-    padding-bottom: 0.5rem;
+  .projects-description p {
+    font-size: var(--font-size-base);
   }
   
   .projects-grid {
     grid-template-columns: 1fr;
+    margin-top: 3rem;
   }
 }
