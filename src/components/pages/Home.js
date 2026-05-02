@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { projects } from '../../Data/projectData';
-import { TypeWriter, ScrollAnimator, initializeAnimations } from '../../utils/animations';
+import { TypeWriter, initializeAnimations } from '../../utils/animations';
 import './Home.css';
 
 const Home = () => {
