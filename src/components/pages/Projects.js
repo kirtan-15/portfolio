@@ -54,7 +54,7 @@ const Projects = () => {
               <div className="card-image">
                 <span className="project-emoji animate-float">{project.image}</span>
                 <div className="card-overlay">
-                  <span className="view-text hover-glow">View Details →</span>
+                  <span className="view-text hover-glow">View Details -></span>
                 </div>
               </div>
               <div className="card-body">

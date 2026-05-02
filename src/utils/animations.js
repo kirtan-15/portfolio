@@ -59,8 +59,8 @@ export class TypeWriter {
 // Scroll Animation Observer
 export class ScrollAnimator {
   constructor(options = {}) {
-    this.threshold = options.threshold || 0.1;
-    this.rootMargin = options.rootMargin || '0px 0px -50px 0px';
+    this.threshold = options.threshold || 0.05;
+    this.rootMargin = options.rootMargin || '0px 0px 80px 0px';
     this.observer = null;
     this.init();
   }
@@ -70,14 +70,7 @@ export class ScrollAnimator {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
-          
-          // Add stagger effect for children
-          const children = entry.target.querySelectorAll('.stagger-item');
-          children.forEach((child, index) => {
-            setTimeout(() => {
-              child.classList.add('animate-fade-in-up');
-            }, index * 100);
-          });
+          this.observer.unobserve(entry.target);
         }
       });
     }, {
@@ -241,7 +234,6 @@ export function showLoadingAnimation(element, text = 'Loading') {
 
 // Initialize all animations on page load
 export function initializeAnimations() {
-  // Initialize scroll animations
   const scrollAnimator = new ScrollAnimator();
   
   // Observe elements with scroll animation classes
@@ -256,20 +248,6 @@ export function initializeAnimations() {
     const words = element.dataset.typewriter.split(',');
     const typewriter = new TypeWriter(element, words);
     typewriter.start();
-  });
-
-  // Initialize stagger animations
-  const staggerContainers = document.querySelectorAll('.stagger-container');
-  staggerContainers.forEach(container => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          staggerAnimation(entry.target, '.stagger-item');
-          observer.unobserve(entry.target);
-        }
-      });
-    });
-    observer.observe(container);
   });
 
   return scrollAnimator;

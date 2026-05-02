@@ -123,6 +123,7 @@ section {
   text-decoration: none;
   font-family: var(--font-primary);
   white-space: nowrap;
+  min-height: 44px;
 }
 
 .btn-primary {

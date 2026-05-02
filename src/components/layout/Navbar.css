@@ -114,13 +114,12 @@
 }
 
 .theme-toggle {
-  width: 40px;
-  height: 40px;
-  border-radius: var(--radius-full);
-  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
   background: var(--bg-tertiary);
   color: var(--text-primary);
-  font-size: var(--font-size-xl);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -129,8 +128,29 @@
 }
 
 .theme-toggle:hover {
+  background: rgba(var(--secondary-rgb), 0.1);
+  border-color: var(--secondary);
+  color: var(--secondary);
+  transform: translateY(-2px);
+}
+
+.theme-toggle-icon {
+  width: 18px;
+  height: 18px;
+  display: block;
+  position: relative;
+}
+
+.moon-icon {
+  border-radius: 50%;
   background: var(--secondary);
-  transform: rotate(180deg) scale(1.1);
+  box-shadow: inset -6px -3px 0 0 var(--bg-tertiary);
+}
+
+.sun-icon {
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px rgba(var(--accent-rgb), 0.16);
 }
 
 .btn-sm {

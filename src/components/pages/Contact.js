@@ -9,6 +9,8 @@ const Contact = () => {
   });
 
   const [status, setStatus] = useState({ type: '', message: '' });
+  const contactEndpoint = process.env.REACT_APP_CONTACT_ENDPOINT;
+  const inboxEmail = 'kirtan0318@gmail.com';
 
   useEffect(() => {
     document.title = 'Contact | Kirtan Soni';
@@ -21,7 +23,7 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     
     if (!formData.name || !formData.email || !formData.message) {
@@ -42,8 +44,57 @@ const Contact = () => {
     }
 
     setStatus({
+      type: 'loading',
+      message: 'Sending your message...'
+    });
+
+    if (contactEndpoint) {
+      try {
+        const response = await fetch(contactEndpoint, {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            message: formData.message,
+            _replyto: formData.email,
+            subject: `Portfolio message from ${formData.name}`
+          })
+        });
+
+        if (!response.ok) {
+          throw new Error('Message delivery failed.');
+        }
+
+        setStatus({
+          type: 'success',
+          message: `Thanks! Your message has been sent to ${inboxEmail}.`
+        });
+
+        setFormData({ name: '', email: '', message: '' });
+      } catch (error) {
+        setStatus({
+          type: 'error',
+          message: 'Message could not be sent right now. Please try again or email me directly.'
+        });
+      }
+
+      return;
+    }
+
+    const subject = encodeURIComponent(`Portfolio message from ${formData.name}`);
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+    );
+
+    window.location.href = `mailto:${inboxEmail}?subject=${subject}&body=${body}`;
+
+    setStatus({
       type: 'success',
-      message: 'Thanks! I\'ll get back to you soon.'
+      message: 'Your email app is opening with the message ready to send.'
     });
 
     setFormData({ name: '', email: '', message: '' });
@@ -64,7 +115,24 @@ const Contact = () => {
         </header>
 
         <div className="contact-content">
-          <form className="contact-form card" onSubmit={handleSubmit}>
+          <aside className="contact-info">
+            <div className="availability-badge">
+              <span className="availability-dot"></span>
+              Available for opportunities
+            </div>
+            <div className="contact-intro">
+              <h2>Tell me what you want to build.</h2>
+              <p>
+                Share a project idea, collaboration opportunity, or role that fits full-stack,
+                Android, API, or cloud-backed product work.
+              </p>
+            </div>
+            <div className="response-time">
+              <p><strong>Inbox:</strong> messages are prepared for {inboxEmail}. Add a contact endpoint in production for automatic delivery.</p>
+            </div>
+          </aside>
+
+          <form className="contact-form card contact-form-wrapper" onSubmit={handleSubmit}>
             {status.message && (
               <div className={`form-status ${status.type}`}>
                 {status.message}
@@ -114,7 +182,7 @@ const Contact = () => {
             </div>
 
             <button type="submit" className="btn btn-primary btn-full">
-              Send Message
+              {status.type === 'loading' ? 'Sending...' : 'Send Message'}
             </button>
           </form>
         </div>

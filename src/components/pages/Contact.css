@@ -211,6 +211,32 @@
   transform: translateY(0);
 }
 
+.form-status {
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--spacing-xl);
+  font-weight: 600;
+  border: 1px solid var(--border-color);
+}
+
+.form-status.success {
+  color: var(--success);
+  background: rgba(var(--success-rgb), 0.1);
+  border-color: rgba(var(--success-rgb), 0.25);
+}
+
+.form-status.error {
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.1);
+  border-color: rgba(239, 68, 68, 0.25);
+}
+
+.form-status.loading {
+  color: var(--secondary);
+  background: rgba(var(--secondary-rgb), 0.1);
+  border-color: rgba(var(--secondary-rgb), 0.25);
+}
+
 /* Availability Badge */
 .availability-badge {
   display: inline-flex;

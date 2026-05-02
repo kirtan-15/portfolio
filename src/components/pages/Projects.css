@@ -51,7 +51,9 @@
 
 .card-image {
   height: 220px;
-  background: var(--bg-tertiary);
+  background:
+    linear-gradient(135deg, rgba(var(--secondary-rgb), 0.12), rgba(var(--accent-rgb), 0.12)),
+    var(--bg-tertiary);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -60,7 +62,21 @@
 }
 
 .project-emoji {
-  font-size: 5rem;
+  min-width: 112px;
+  height: 112px;
+  padding: 0 var(--spacing-lg);
+  border-radius: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--secondary);
+  background: rgba(var(--bg-primary-rgb), 0.72);
+  border: 1px solid rgba(var(--secondary-rgb), 0.25);
+  box-shadow: var(--shadow-lg);
+  font-size: var(--font-size-xl);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   transition: transform 0.5s ease;
 }
 

@@ -29,7 +29,7 @@ export const projects = [
     ],
     category: 'mobile',
     tech: ['Kotlin', 'Android SDK', 'Gemini AI', 'Firebase', 'Genetic Algorithms', 'Coroutines', 'Material Design 3'],
-    image: '📱',
+    image: 'APP',
     github: null,
     live: null
   },
@@ -40,7 +40,7 @@ export const projects = [
     role: 'Full-Stack Developer',
     projectType: 'Comprehensive Corporate Management System',
     status: 'Completed',
-    description: 'SmartCMS is a robust, full-stack Corporate Management System designed to centralize and automate internal corporate operations. Moving beyond basic CRUD applications, SmartCMS tackles complex business workflows—such as geolocation-based attendance, multi-tiered approval processes, and intelligent escalation systems.',
+    description: 'SmartCMS is a robust, full-stack Corporate Management System designed to centralize and automate internal corporate operations. Moving beyond basic CRUD applications, SmartCMS tackles complex business workflows such as geolocation-based attendance, multi-tiered approval processes, and intelligent escalation systems.',
     achievements: [
       {
         title: '1. Intelligent Attendance Escalation Engine',
@@ -63,7 +63,7 @@ export const projects = [
     ],
     category: 'fullstack',
     tech: ['Angular (v19+)', 'TypeScript', 'Node.js', 'Express.js', 'MongoDB', 'JWT', 'Tailwind CSS'],
-    image: '🚀',
+    image: 'ERP',
     github: null,
     live: null
   },
@@ -96,7 +96,7 @@ export const projects = [
     ],
     category: 'fullstack',
     tech: ['React 19', 'Node.js', 'Express', 'MongoDB', 'Chart.js', 'Tailwind CSS'],
-    image: '🎵',
+    image: 'MUSIC',
     github: null,
     live: null
   },
@@ -129,7 +129,7 @@ export const projects = [
     ],
     category: 'frontend',
     tech: ['React 18', 'Tailwind CSS', 'SheetJS (xlsx)', 'Recharts', 'Vite'],
-    image: '📊',
+    image: 'DATA',
     github: null,
     live: null
   },
@@ -158,7 +158,7 @@ export const projects = [
     ],
     category: 'backend',
     tech: ['React', 'Python', 'FastAPI', 'Cryptography', 'REST APIs'],
-    image: '🔐',
+    image: 'SEC',
     github: null,
     live: null
   }

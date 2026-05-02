@@ -63,8 +63,8 @@ const About = () => {
           <div className="intro-content-centered stagger-container">
             <p className="intro-paragraph-centered stagger-item">
               Hello! I'm <strong>Kirtan Soni</strong>, a passionate Software Engineer specializing in building robust, 
-              scalable applications. With expertise across the full stack—from intuitive frontend interfaces to secure 
-              backend architectures and mobile solutions—I create end-to-end development experiences that make a difference.
+              scalable applications. With expertise across the full stack, from intuitive frontend interfaces to secure 
+              backend architectures and mobile solutions, I create end-to-end development experiences that make a difference.
             </p>
             <p className="intro-paragraph-centered stagger-item">
               My approach focuses on writing clean, maintainable code while prioritizing user experience and security. 
@@ -154,7 +154,7 @@ const About = () => {
                 <p className="achievement-description">{achievement.description}</p>
                 {achievement.link && (
                   <a href={achievement.link} className="achievement-link">
-                    Read paper →
+                    Read paper ->
                   </a>
                 )}
               </div>
@@ -168,7 +168,7 @@ const About = () => {
             <h2 className="cta-title text-shadow-glow">Let's build something amazing together</h2>
             <p className="cta-subtitle">Ready to discuss your next project or how I can help with your goals?</p>
             <Link to="/contact" className="btn btn-primary btn-lg hover-lift btn-animated">
-              Start a conversation →
+              Start a conversation ->
             </Link>
           </div>
         </section>

@@ -6,7 +6,6 @@ const Navbar = ({ theme, toggleTheme }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -23,16 +22,16 @@ const Navbar = ({ theme, toggleTheme }) => {
     { name: 'Contact', path: '/contact' }
   ];
 
+  const themeIconClass = theme === 'light' ? 'moon-icon' : 'sun-icon';
+
   return (
     <nav className={`navbar ${isScrolled ? 'navbar-scrolled' : ''}`}>
       <div className="container navbar-container">
-        {/* Logo */}
         <NavLink to="/" className="navbar-logo">
           <span className="logo-text">Kirtan Soni</span>
           <span className="logo-accent">.</span>
         </NavLink>
 
-        {/* Desktop Navigation */}
         <div className="navbar-menu">
           {navLinks.map((link) => (
             <NavLink
@@ -48,18 +47,16 @@ const Navbar = ({ theme, toggleTheme }) => {
           ))}
         </div>
 
-        {/* Right Side Actions */}
         <div className="navbar-actions">
-          {/* Theme Toggle */}
           <button
             onClick={toggleTheme}
             className="theme-toggle"
             aria-label="Toggle theme"
+            title={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
           >
-            {theme === 'light' ? '🌙' : '☀️'}
+            <span className={`theme-toggle-icon ${themeIconClass}`} aria-hidden="true"></span>
           </button>
 
-          {/* Mobile Menu Toggle */}
           <button
             className="mobile-menu-toggle"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -70,7 +67,6 @@ const Navbar = ({ theme, toggleTheme }) => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       <div className={`mobile-menu ${isMobileMenuOpen ? 'mobile-menu-open' : ''}`}>
         <div className="mobile-menu-content">
           {navLinks.map((link) => (

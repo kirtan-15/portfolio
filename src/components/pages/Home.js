@@ -72,14 +72,13 @@ const Home = () => {
                   onClick={() => navigate('/contact')}
                 >
                   <span>Hire Me</span>
-                  <span className="btn-icon">→</span>
+                  <span className="btn-icon">-></span>
                 </button>
                 <button 
                   className="btn btn-secondary hover-lift btn-animated stagger-item"
                   onClick={() => navigate('/projects')}
                 >
                   <span>View My Work</span>
-                  <span className="btn-icon">💼</span>
                 </button>
               </div>
             </div>
@@ -185,7 +184,7 @@ developer.startProject();`}
               onClick={() => navigate('/projects')}
             >
               <span>View All Projects</span>
-              <span className="btn-icon">→</span>
+              <span className="btn-icon">-></span>
             </button>
           </div>
         </div>
@@ -205,7 +204,7 @@ developer.startProject();`}
                 onClick={() => navigate('/contact')}
               >
                 <span>Hire Me Today</span>
-                <span className="btn-icon">→</span>
+                <span className="btn-icon">-></span>
               </button>
             </div>
           </div>
