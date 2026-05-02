@@ -10,8 +10,6 @@ import Footer from './components/layout/Footer';
 import Home from './components/pages/Home';
 import About from './components/pages/About';
 import Projects from './components/pages/Projects';
-import Skills from './components/pages/Skills';
-import Experience from './components/pages/Experience';
 import Contact from './components/pages/Contact';
 import ProjectDetails from './components/pages/ProjectDetails';
 
@@ -55,8 +53,6 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/projects/:id" element={<ProjectDetails />} />
-          <Route path="/skills" element={<Skills />} />
-          <Route path="/experience" element={<Experience />} />
           <Route path="/contact" element={<Contact />} />
           
           {/* 404 - Redirect to home */}

@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './About.css';
 
 const About = () => {
@@ -6,160 +7,156 @@ const About = () => {
     document.title = 'About | Kirtan Soni';
   }, []);
 
-  const skills = {
-    frontend: ['React', 'JavaScript', 'HTML5', 'CSS3', 'Responsive Design'],
-    backend: ['Python', 'FastAPI', 'Node.js', 'REST APIs'],
-    tools: ['Git', 'VS Code', 'Postman', 'MongoDB'],
-    learning: ['TypeScript', 'Docker', 'PostgreSQL', 'AWS']
-  };
-
-  const journey = [
+  const education = [
+    
     {
-      year: '2023',
-      title: 'Started Web Development',
-      description: 'Began learning HTML, CSS, and JavaScript fundamentals'
+      year: '2025 - 2027',
+      degree: 'MSc IT, LJ University',
+      description: 'Advanced academic track focused on modern software, systems, and applied technology.'
     },
     {
-      year: '2024',
-      title: 'React & Python',
-      description: 'Dove deep into React and Python backend development'
-    },
-    {
-      year: '2025',
-      title: 'Building Projects',
-      description: 'Creating full-stack applications and learning cybersecurity'
+      year: '2022 - 2025',
+      degree: 'BSc IT, LJ University',
+      description: 'Graduated with a strong base in software development fundamentals and applied projects.'
     }
   ];
+
+  const achievements = [
+    {
+      title: 'Research Publication',
+      description: 'The paper explores how virtual environments and humanoids interaction, along with future opportunities, challenges, and real-world impact. Published in Journal of Statistics and Management Systems (JSMS) in 2025.',
+      link: '#'
+    },
+    
+  ];
+
+
+
+  const skills = {
+    frontend: ['React', 'Angular', 'JavaScript', 'HTML5', 'CSS3', 'Responsive design', 'Design systems'],
+    backend: ['Node.js', 'FastAPI', 'Django', 'REST API', 'Authentication systems', 'API Integration'],
+    database: ['MongoDB', 'Firebase', 'Cloud Firestore', 'Real-time Database', 'Database Design'],
+    tools: ['Git', 'VS Code', 'Postman', 'GitHub', 'Vercel']
+  };
 
   return (
     <div className="about-page">
       <div className="container">
-        {/* Header */}
-        <header className="page-header animate-fade-in-up">
-          <h1 className="page-title">About Me</h1>
-          <p className="page-subtitle">
-            Developer, learner, and builder of digital experiences
-          </p>
-        </header>
+        {/* About Me Introduction */}
+        <section className="about-section intro-section">
+          <div className="section-label">ABOUT ME</div>
+          <h2 className="section-title">Developer, learner, and builder of digital experiences</h2>
+          
+          <div className="intro-content-text">
+            <p className="intro-paragraph">
+              Hello! I'm <strong>Kirtan Soni</strong>, a passionate Software Engineer specializing in building robust, 
+              scalable applications. With expertise across the full stack—from intuitive frontend interfaces to secure 
+              backend architectures and AI-driven solutions—I create end-to-end development experiences that make a difference.
+            </p>
+            <p className="intro-paragraph">
+              My approach focuses on writing clean, maintainable code while prioritizing user experience and security. 
+              I believe in continuous learning and staying updated with emerging technologies to deliver modern, 
+              efficient solutions.
+            </p>
+            <p className="intro-paragraph">
+              Whether it's building a dynamic web application, developing RESTful APIs, or exploring machine learning 
+              models, I bring technical excellence and problem-solving skills to every project. I'm currently seeking 
+              opportunities to collaborate on innovative projects and contribute to meaningful digital transformations.
+            </p>
+          </div>
+        </section>
 
-        {/* Introduction */}
-        <section className="about-intro animate-fade-in-up">
-          <div className="intro-content">
-            <div className="intro-text">
-              <h2 className="section-heading">Hello! I'm Kirtan Soni</h2>
-              <p className="intro-paragraph">
-                I am a professional Software Engineer specializing in building robust, scalable applications. 
-                With expertise across the full stack—from intuitive frontend interfaces to secure backend 
-                architectures and AI-driven mobile applications—I provide end-to-end development services tailored 
-                to your business needs.
-              </p>
-              <p className="intro-paragraph">
-                My approach focuses on writing clean, maintainable code and prioritizing user experience and 
-                security. Whether you are a startup looking to build your MVP or an established business needing 
-                to optimize your internal tools, I bring technical excellence and problem-solving skills to every project.
-              </p>
-              <p className="intro-paragraph">
-                I am currently accepting freelance opportunities and consulting projects. Let's collaborate to transform 
-                your digital ideas into high-performing reality.
-              </p>
+        {/* Skills Section */}
+        <section className="about-section skills-section">
+          <div className="section-label">SKILLS & EXPERTISE</div>
+          <h2 className="section-title">Full-stack development expertise</h2>
+          <p className="section-subtitle">Expertise in frontend, backend, API integration, and cloud-based database solutions</p>
+          
+          <div className="skills-categories">
+            <div className="skill-category">
+              <h3 className="skill-category-title">Frontend and Product UI</h3>
+              <div className="skill-tags">
+                {skills.frontend.map((skill, index) => (
+                  <span key={index} className="skill-tag">{skill}</span>
+                ))}
+              </div>
             </div>
-            <div className="intro-image">
-              <div className="image-placeholder">
-                <span className="placeholder-icon">👨‍💻</span>
+
+            <div className="skill-category">
+              <h3 className="skill-category-title">Backend and APIs</h3>
+              <div className="skill-tags">
+                {skills.backend.map((skill, index) => (
+                  <span key={index} className="skill-tag">{skill}</span>
+                ))}
+              </div>
+            </div>
+
+            <div className="skill-category">
+              <h3 className="skill-category-title">Database & Cloud Integration</h3>
+              <div className="skill-tags">
+                {skills.database.map((skill, index) => (
+                  <span key={index} className="skill-tag">{skill}</span>
+                ))}
+              </div>
+            </div>
+
+            <div className="skill-category">
+              <h3 className="skill-category-title">Tools & Technologies</h3>
+              <div className="skill-tags">
+                {skills.tools.map((skill, index) => (
+                  <span key={index} className="skill-tag">{skill}</span>
+                ))}
               </div>
             </div>
           </div>
         </section>
 
-        {/* Skills */}
-        <section className="skills-overview">
-          <h2 className="section-heading text-center">Technical Skills</h2>
-          <div className="skills-grid grid-4">
-            <div className="skill-category card hover-lift">
-              <div className="category-icon">🎨</div>
-              <h3 className="category-title">Frontend</h3>
-              <ul className="skill-list">
-                {skills.frontend.map((skill, index) => (
-                  <li key={index}>{skill}</li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="skill-category card hover-lift">
-              <div className="category-icon">⚙️</div>
-              <h3 className="category-title">Backend</h3>
-              <ul className="skill-list">
-                {skills.backend.map((skill, index) => (
-                  <li key={index}>{skill}</li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="skill-category card hover-lift">
-              <div className="category-icon">🛠️</div>
-              <h3 className="category-title">Tools</h3>
-              <ul className="skill-list">
-                {skills.tools.map((skill, index) => (
-                  <li key={index}>{skill}</li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="skill-category card hover-lift">
-              <div className="category-icon">📚</div>
-              <h3 className="category-title">Learning</h3>
-              <ul className="skill-list">
-                {skills.learning.map((skill, index) => (
-                  <li key={index}>{skill}</li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        {/* Journey */}
-        <section className="journey">
-          <h2 className="section-heading text-center">My Journey</h2>
-          <div className="timeline">
-            {journey.map((item, index) => (
-              <div key={index} className="timeline-item">
-                <div className="timeline-marker">{item.year}</div>
-                <div className="timeline-content card">
-                  <h3 className="timeline-title">{item.title}</h3>
-                  <p className="timeline-description">{item.description}</p>
-                </div>
+        {/* Education Section */}
+        <section className="about-section education-section">
+          <div className="section-label">EDUCATION</div>
+          <h2 className="section-title">Academic foundation</h2>
+          <p className="section-subtitle">Continuous learning and professional development</p>
+          
+          <div className="education-grid">
+            {education.map((edu, index) => (
+              <div key={index} className="education-card">
+                <div className="education-year">{edu.year}</div>
+                <h3 className="education-degree">{edu.degree}</h3>
+                <p className="education-description">{edu.description}</p>
               </div>
             ))}
           </div>
         </section>
 
-        {/* Values */}
-        <section className="values">
-          <h2 className="section-heading text-center">What Drives Me</h2>
-          <div className="values-grid grid-3">
-            <div className="value-card card hover-lift">
-              <div className="value-icon">💡</div>
-              <h3 className="value-title">Innovation</h3>
-              <p className="value-description">
-                Always exploring new technologies and approaches to solve problems creatively.
-              </p>
-            </div>
+        {/* Recognition Section */}
+        <section className="about-section recognition-section">
+          <div className="section-label">RECOGNITION</div>
+          <h2 className="section-title">Achievements and contributions</h2>
+          <p className="section-subtitle">Milestones that reflect growth and impact</p>
+          
+          <div className="achievements-grid">
+            {achievements.map((achievement, index) => (
+              <div key={index} className="achievement-card">
+                <h3 className="achievement-title">{achievement.title}</h3>
+                <p className="achievement-description">{achievement.description}</p>
+                {achievement.link && (
+                  <a href={achievement.link} className="achievement-link">
+                    Read paper →
+                  </a>
+                )}
+              </div>
+            ))}
+          </div>
+        </section>
 
-            <div className="value-card card hover-lift">
-              <div className="value-icon">🎯</div>
-              <h3 className="value-title">Quality</h3>
-              <p className="value-description">
-                Committed to writing clean, maintainable code that follows best practices.
-              </p>
-            </div>
-
-            <div className="value-card card hover-lift">
-              <div className="value-icon">🤝</div>
-              <h3 className="value-title">Collaboration</h3>
-              <p className="value-description">
-                Believing in the power of teamwork and open communication to achieve great results.
-              </p>
-            </div>
+        {/* CTA Section */}
+        <section className="about-cta">
+          <div className="cta-content">
+            <h2 className="cta-title">Let's build something amazing together</h2>
+            <p className="cta-subtitle">Ready to discuss your next project or how I can help with your goals?</p>
+            <Link to="/contact" className="btn btn-primary btn-lg">
+              Start a conversation →
+            </Link>
           </div>
         </section>
       </div>
