@@ -95,11 +95,11 @@ const Home = () => {
                   <pre className="code-block scroll-fade-in">
 {`const developer = {
   name: "Kirtan Soni",
-  expertise: [
-    "Web Applications",
-    "Mobile Development",
-    "API Integration"
-  ],
+  stack: {
+    mobile: "Kotlin + Firebase",
+    web: "Angular & React",
+    backend: "Node.js + MongoDB"
+  },
   focus: "Scalable & Elegant Solutions",
   status: "Accepting New Clients",
   availability: true
@@ -132,7 +132,16 @@ developer.startProject();`}
                 className="project-card-modern stagger-item card-hover-effect hover-lift"
               >
                 <div className="project-image-placeholder">
-                  <div className="project-icon-large animate-float">{project.image}</div>
+                  {project.screenshots ? (
+                    <img
+                      className="project-thumb"
+                      src={project.screenshots[0].src}
+                      alt={project.title}
+                      loading="lazy"
+                    />
+                  ) : (
+                    <div className="project-icon-large animate-float">{project.image}</div>
+                  )}
                   <div className="project-overlay">
                     <span className="category-tag animate-pulse">{project.category}</span>
                   </div>
@@ -141,10 +150,6 @@ developer.startProject();`}
                 <div className="project-content">
                   <h3 className="project-title-modern text-gradient-hover">{project.title}</h3>
                   <p className="project-tagline-modern">{project.tagline}</p>
-                  
-                  <div className="project-details" style={{ marginBottom: '1.5rem', color: 'var(--text-secondary)' }}>
-                    <p>{project.description}</p>
-                  </div>
 
                   <div className="project-tech-modern">
                     {project.tech.slice(0, 4).map((tech, i) => (
