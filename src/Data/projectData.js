@@ -79,7 +79,7 @@ export const projects = [
       { src: '/images/schedulix/student-dashboard.jpg', caption: 'Student Dashboard — today\'s timetable & attendance' }
     ],
     github: null,
-    live: null
+    live: 'https://schedulix-app.web.app/'
   },
   {
     id: 2,
@@ -139,7 +139,7 @@ export const projects = [
       { src: '/images/scms/leave-year-end.png', caption: 'Year-end leave processing with preview & execute' },
       { src: '/images/scms/projects-analytics.png', caption: 'Project analytics and team utilization' }
     ],
-    github: null,
+    github: 'https://github.com/CodeNickBit/SmartCMS',
     live: null
   },
   {
@@ -172,7 +172,7 @@ export const projects = [
     category: 'fullstack',
     tech: ['React 19', 'Node.js', 'Express', 'MongoDB', 'Chart.js', 'Tailwind CSS'],
     image: 'MUSIC',
-    github: null,
+    github: 'https://github.com/Aayush14Shah/musicStreaming-Museek',
     live: null
   },
   {
@@ -205,7 +205,7 @@ export const projects = [
     category: 'frontend',
     tech: ['React 18', 'Tailwind CSS', 'SheetJS (xlsx)', 'Recharts', 'Vite'],
     image: 'DATA',
-    github: null,
+    github: 'https://github.com/Aayush14Shah/BackLogTrackingSystem',
     live: null
   }
 ];

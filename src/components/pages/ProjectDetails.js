@@ -133,21 +133,34 @@ const ProjectDetails = () => {
             </div>
 
             <div className="sidebar-card actions">
-              <h3>Project Links</h3>
-              <div className="action-buttons">
-                {project.github ? (
-                  <a href={project.github} target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
-                    GitHub Repo
-                  </a>
-                ) : (
-                  <span className="locked-btn">🔒 Private Repository</span>
-                )}
-                {project.live && (
+              {project.github ? (
+                <>
+                  <h3>Project Links</h3>
+                  <div className="action-buttons">
+                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
+                      GitHub Repo
+                    </a>
+                    {project.live && (
+                      <a href={project.live} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+                        Live Demo
+                      </a>
+                    )}
+                  </div>
+                </>
+              ) : project.live ? (
+                <div className="action-buttons">
                   <a href={project.live} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
                     Live Demo
                   </a>
-                )}
-              </div>
+                </div>
+              ) : (
+                <>
+                  <h3>Project Links</h3>
+                  <div className="action-buttons">
+                    <span className="locked-btn">🔒 Private Repository</span>
+                  </div>
+                </>
+              )}
             </div>
           </aside>
         </div>
